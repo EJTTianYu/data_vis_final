@@ -93,7 +93,7 @@ def network_vis():
     strike_df = pd.read_csv(r'../res/strike_the_blood_relationship.txt')
     strike_df['weight'] = strike_df.Weight / 120
     strike_df2 = strike_df[strike_df.weight > 0.025].reset_index(drop=True)
-    plt.figure(figsize=(12, 12))
+    plt.figure(figsize=(8, 8))
     G = nx.Graph()
     for ii in strike_df2.index:
         G.add_edge(strike_df2.First[ii], strike_df2.Second[ii], weight=strike_df2.weight[ii])
@@ -115,5 +115,5 @@ if __name__ == '__main__':
     # _rebuild()
     # data_vis1()
     # data_vis2()
-    # txt_ana()
-    network_vis()
+    txt_ana()
+    # network_vis()
